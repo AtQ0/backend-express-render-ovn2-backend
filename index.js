@@ -1,12 +1,15 @@
-const express = require('express')
+const express = require('express');
+const cors = require('cors'); // Import cors
 
-const app = express(),
-  port = process.env.PORT || 3000
+const app = express();
+const port = process.env.PORT || 3000;
+
+app.use(cors()); // Enable CORS for all routes
 
 app.get('/', (_request, response) => {
-  response.send({ hello: 'World' })
-})
+  response.send({ hello: 'Atkooo ho oh oh ho ho' });
+});
 
 app.listen(port, () => {
-  console.log(`Redo på http://localhost:${port}/`)
-})
+  console.log(`Server running at http://localhost:${port}/`);
+});
